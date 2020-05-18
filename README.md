@@ -2,6 +2,8 @@
 
 In this project, we will be practicing object relationships in Ruby, with a particular emphasis on the `has_many` `through` relationship (aka: many-to-many). Please read the whole README before writing any code!
 
+
+
 ### Introduction
 
 You got yourself a fancy new job and you've been put in charge of making a program to keep track of paintings, and the galleries that are selling them.  
@@ -20,26 +22,26 @@ An artist can, of course, have many paintings. Paintings can only be in one gall
 * What does your schema look like?
 * What are the relationships between your models?
 
-
+#  gallery -< artists -< paintings
 
 ### Class Attributes and Methods
 
 **ARTIST**
-
+<!-- 
   * `Artist.all`
-    * Returns an `array` of all the artists
+    * Returns an `array` of all the artists -->
 
-  * `Artist#paintings`
-    * Returns an `array` all the paintings by an artist
-
+  <!-- * `Artist#paintings`
+    * Returns an `array` all the paintings by an artist -->
+<!-- 
   * `Artist#galleries`
-    * Returns an `array` of all the galleries that an artist has paintings in
+    * Returns an `array` of all the galleries that an artist has paintings in -->
 
-  * `Artist#cities`
-    * Return an `array` of all cities that an artist has paintings in
-
+  <!-- * `Artist#cities`
+    * Return an `array` of all cities that an artist has paintings in -->
+<!-- 
   * `Artist.total_experience`
-    * Returns an `integer` that is the total years of experience of all artists
+    * Returns an `integer` that is the total years of experience of all artists -->
 
   * `Artist.most_prolific`
     * Returns an `instance` of the artist with the highest amount of paintings per year of experience.
