@@ -17,6 +17,7 @@ The initial files and basic attributes have already been built, but you'll need 
 An artist can, of course, have many paintings. Paintings can only be in one gallery at a time, and only have one artist.  Galleries can have many paintings.
 
 * What are your models?
+Artist ---> Paintings <---- Galleries
 * What does your schema look like?
 * What are the relationships between your models?
 
@@ -46,6 +47,8 @@ An artist can, of course, have many paintings. Paintings can only be in one gall
 
   * `Artist#create_painting`
     * Given the arguments of `title`, `price` and `gallery`, creates a new painting belonging to that artist
+
+DONE VVVVVVVVVVVVVVVV
 
 **PAINTING**
 
