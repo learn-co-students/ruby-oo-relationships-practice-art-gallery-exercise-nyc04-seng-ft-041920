@@ -61,8 +61,9 @@ class Artist
     # end
     # prolific_artist
 
-    self.all.map do |artist|
-      artist.paintings
+    #Refactoring the mess above
+    self.all.max do |artist|
+     paintings_per = artist.paintings.count/artist.years_experience.to_f
     end
   end
 
