@@ -42,24 +42,28 @@ class Artist
 
   #paintings/years
   def self.most_prolific
-    artists = Painting.all.map {|painting| painting.artist}
-    count = Hash.new 0
-    artists.each do |artist|
-      count[artist] +=1
-    end
-    count
+    # artists = Painting.all.map {|painting| painting.artist}
+    # count = Hash.new 0
+    # artists.each do |artist|
+    #   count[artist] +=1
+    # end
+    # count
 
-    prolific = 0.000001
-    prolific_artist = ""
+    # prolific = 0.000001
+    # prolific_artist = ""
 
-    self.all.each do |artist|
-      paintings_year = count[artist]/(artist.years_experience.to_f)
-      if paintings_year > prolific
-        prolific = paintings_year
-        prolific_artist = artist
-      end
+    # self.all.each do |artist|
+    #   paintings_year = count[artist]/(artist.years_experience.to_f)
+    #   if paintings_year > prolific
+    #     prolific = paintings_year
+    #     prolific_artist = artist
+    #   end
+    # end
+    # prolific_artist
+
+    self.all.map do |artist|
+      artist.paintings
     end
-    prolific_artist
   end
 
 end
