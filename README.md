@@ -16,6 +16,8 @@ The initial files and basic attributes have already been built, but you'll need 
 
 An artist can, of course, have many paintings. Paintings can only be in one gallery at a time, and only have one artist.  Galleries can have many paintings.
 
+Artist --<  Painting  >-- Gallery
+
 * What are your models?
 * What does your schema look like?
 * What are the relationships between your models?
