@@ -24,29 +24,33 @@ class Gallery
 
   def artists
   # Returns an array of all artists that have a painting in a gallery
-    self.paintings.collect do |element|
+    paintings.collect do |element|
      element.artist  
     end 
   end 
 
   def artist_names
     # Returns an array of the names of all artists that have a painting in a gallery
-    self.artists.map do |element|
+    artists.map do |element|
       element.name 
     end 
   end 
 
   def most_expensive_painting
     # Returns an instance of the most expensive painting in a gallery
-    price = 0 
-    Painting.all.map do |painting|
-      if painting.price > price
-        price = painting.price 
-      else 
-        price 
-      end 
-    end 
-    return price 
+    # price = 0 
+    # Painting.all.map do |painting|
+    #   if painting.price > price
+    #     price = painting.price 
+    #   else 
+    #     price 
+    #   end 
+    # end 
+    # return price 
+
+    paintings.max_by do |painting|
+      painting.price
+    end
   end 
 
 end

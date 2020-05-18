@@ -19,43 +19,41 @@ class Artist
     # Returns an array all the paintings by an artist
     Painting.all.select do |painting|
       painting.artist == self 
-    end 
+    end.uniq
   end 
 
   def galleries
     #Returns an array of all the galleries that an artist has paintings in
-    Gallery.all.select do |painting|
-      painting.gallery == self 
+    self.paintings.map do |painting|
+      painting.gallery 
     end 
   end 
 
   def cities
     #Return an array of all cities that an artist has paintings in
-  Gallery.all.map do |element|
-    element.city 
-    end 
+  self.galleries.map do |gallery|
+   gallery.city 
+    end.uniq 
   end 
 
   def self.total_experience
     # Returns an integer that is the total years of experience of all artists
-    total = 0
-    Artist.all.map do |painter|
-      total += painter.years_experience
-    end 
+    # total = 0
+    # Artist.all.map do |painter|
+    #   total += painter.years_experience
+    # end 
+    @@all.sum do |artist|
+      artist.years_experience
+    end
+    
   end
 
   def self.most_prolific
     #Returns an instance of the artist with the highest amount of paintings 
     #per year of experience.
-    amount = 0
-    Artist.all.each do |painter|
-      if new_amount = painter.years_experience / Painting.count.to_i > amount
-        new_amount = amount 
-      else
-        amount 
-      end 
-      return amount
-  end 
+    
+  @@all.max_by do |artist|
+    artist.paintings.length / artist.years_experience
 end 
 
   def create_painting(title, price, gallery)
