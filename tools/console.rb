@@ -2,10 +2,10 @@ require_relative '../config/environment.rb'
 
 
 
-alexandra = Artist.new("ALEXANDRA", 8) # 3 => 8 / 3 = every 2.6 years 1 painting
-marcelo = Artist.new("MARCELO", 13) # 2 => 13 / 2 = every 6 years 1 painting
-marcio = Artist.new("MARCIO", 5) # 0 
-marcus = Artist.new("MARCUS", 9) # 1 => 9 / 1 = every 9 years 1 paiting
+alexandra = Artist.new("ALEXANDRA", 50) 
+marcelo = Artist.new("MARCELO", 13) 
+marcio = Artist.new("MARCIO", 5) 
+marcus = Artist.new("MARCUS", 9) 
 
 alltogether = Gallery.new("ALL TOGETHER", "NEW YORK")
 tudojunto = Gallery.new("TUDO JUNTO", "RIO DE JANEIRO")

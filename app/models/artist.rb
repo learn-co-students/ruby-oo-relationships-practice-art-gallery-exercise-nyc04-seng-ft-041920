@@ -28,17 +28,11 @@ class Artist
   end
 
   def self.most_prolific
-    average_painting_year = 999
-    prolific_artist = nil
-    Painting.all.each do |painting|
-      greatest_average = painting.artist.years_experience / painting.artist.paintings.count
-      if average_painting_year > greatest_average
-        average_painting_year = greatest_average
-        prolific_artist = painting.artist.name
-      end
+    self.all.max_by do |artist|
+        artist.paintings.count / artist.years_experience
     end
-    prolific_artist
   end
+
 
   def create_painting(title, gallery, price)
     Painting.new(title, self, gallery, price)
@@ -50,7 +44,14 @@ class Artist
 end
 
 
-# average_painting_year = artist.years_experience / painting_count
-        # if average_painting_year > tempAverage
-        #   tempAverage = artist.years_experience / painting_count
-        # end
+#   average_painting_year = 999
+#   prolific_artist = nil
+#   Painting.all.each do |painting|
+#     greatest_average = painting.artist.years_experience / painting.artist.paintings.count
+#     if average_painting_year > greatest_average
+#       average_painting_year = greatest_average
+#       prolific_artist = painting.artist.name
+#     end
+#   end
+#   prolific_artist
+# end
